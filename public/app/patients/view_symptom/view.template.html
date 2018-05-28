@@ -1,0 +1,70 @@
+﻿<!--<img src="assets/logo.png">
+
+<section *ngIf="article && article.creator">
+    <h1>{{article.title}}</h1>
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/articles', article._id, 'edit']">edit</a>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Posted on {{article.created}} by {{
+article.creator.
+fullName
+            }}
+        </em>
+    </small>
+    <p>{{article.content}}</p>
+</section>-->
+
+<div  style="padding-top:100px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <a class="navbar-brand">Patient Information System</a>
+                      <ul class="nav navbar-nav">
+                            <li ><a [routerLink]="['/']"><i class="fa fa-sign-home"></i>Home</a></li>                      
+                         <li > <a *ngIf="user" href="/api/auth/signout"><i class="fa fa-sign-out"></i>Signout</a> </li>
+                      </ul>
+                      <ul class="nav navbar-nav ml-auto" *ngIf="user">
+                            <li>
+                                    <a class="nav-link">(Login: {{user.fullName}})</a>
+                                  </li>
+                               
+                                     <li>
+                                      <a class="nav-link">(Role: {{user.role}})</a>
+                                    
+                                  </li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+<!--<section *ngIf="article && article.creator">-->
+        <div class="row">
+                <div class="col-md-offset-1 col-md-2">
+                           
+        
+                    </div>
+                        
+                    <div class="col-md-offset-3 col-md-7">
+                        <h2> SYMPTOM RESULT</h2>     
+                                    
+                    <div class='containerDecoration'>
+              
+                                 
+                        <div   class ="pre-scrollable" style="max-height:76vh">
+
+                           
+
+                            <div><h2> {{symptom | json }}</h2></div>
+                           
+        
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+       <!-- </section>-->

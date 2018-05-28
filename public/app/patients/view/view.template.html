@@ -1,0 +1,112 @@
+﻿<!--<img src="assets/logo.png">
+
+<section *ngIf="article && article.creator">
+    <h1>{{article.title}}</h1>
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/articles', article._id, 'edit']">edit</a>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Posted on {{article.created}} by {{
+article.creator.
+fullName
+            }}
+        </em>
+    </small>
+    <p>{{article.content}}</p>
+</section>-->
+
+<div  style="padding-top:100px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <a class="navbar-brand">Patient Information System</a>
+                      <ul class="nav navbar-nav">
+                            <li ><a [routerLink]="['/']"><i class="fa fa-sign-home"></i>Home</a></li>                    
+                         <li > <a *ngIf="user" href="/api/auth/signout"><i class="fa fa-sign-out"></i>Signout</a> </li>
+                      </ul>
+                      <ul class="nav navbar-nav ml-auto"  *ngIf="user">
+                            <li>
+                                    <a class="nav-link">(Login: {{user.fullName}})</a>
+                                  </li>
+                               
+                                     <li>
+                                      <a class="nav-link">(Role: {{user.role}})</a>
+                                    
+                                  </li>
+                          </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+<section *ngIf="article && article.creator">
+        <div class="row">
+                <div class="col-md-offset-0 col-md-0">
+                           
+        
+                    </div>
+                        
+                    <div class="col-md-offset-0 col-md-12">
+                        <h2> PATIENT INFORMATION</h2>     
+                                    
+                    <div class='containerDecoration'>
+              
+                                 
+                        <div   class ="pre-scrollable" style="max-height:76vh">
+        <table align="center" class="table table-bordered table-striped table-hover">
+               
+
+                   
+                   <thead>
+                            <tr align="center">
+                                    <td><div> <label>Patient Id</label></div></td>
+                                    <td><div> <label>First Name</label></div></td>
+                                    <td><div> <label>Last Name</label></div></td>
+                                    <td><div> <label>Pulse Rate</label></div></td>
+                                    <td><div><label>Blood Pressure</label></div></td>
+                                    <td><div><label>Weight</label></div></td>
+                                    <td><div><label>Temperature</label></div></td>
+                                    <td><div><label>Respiratory Rate</label></div></td>
+                                    <td><div><label>Clinical History</label></div></td>
+                                    <td><div><label>User Name</label></div></td>
+                                    <td><div><label>Delete</label></div></td>
+                                    <td><div><label>Edit</label></div></td>
+                                </tr>
+                    </thead>
+                    <tbody>
+                            <tr align="center">
+                                    <td><a [routerLink]="['/articles', article._id]">{{article.patientId}}</a></td>
+                                    <td>{{article.firstName}}</td>
+                                    <td>{{article.lastName}}</td>
+                                    <td>{{article.pulseRate}}</td>
+                                        <td>{{article.bloodPressure}}</td>
+                                            <td>{{article.weight}}</td>
+                                                <td>{{article.temperature}}</td>
+                                                <td>{{article.respiratoryRate}}</td>
+                                                <td>{{article.clinicalHistory}}</td>
+                                                <td>{{article.creator.fullName}}</td>
+                                             
+                                                <td><div *ngIf='user'><button  type="submit" (click)="delete()" class="btn btn-danger">Delete</button></div></td>
+                                                <td><div *ngIf='user'><button type="submit" [routerLink]="['/articles', article._id, 'edit']" class="btn btn-primary">Add/Edit</button></div></td>
+                                                
+                                            
+                            </tr>
+
+                    </tbody>
+    
+                    
+ 
+ 
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+                <td><div *ngIf='!user'> <h3 style="color:yellow">You are not loged in</h3> </div>
+  
+        </section>

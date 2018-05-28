@@ -1,0 +1,106 @@
+﻿
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand">Patient Information System</a>
+              <ul class="nav navbar-nav">
+                <li><a routerLinkActive="active" [routerLink]="['/']"><i class="fa fa-home"></i>Home<span class="sr-only">(current)</span></a></li>
+                <li > <a href="/api/auth/signout"><i class="fa fa-sign-out"></i>Signout</a> </li> 
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div style="padding-top: 50px;">
+    <div class="container" >
+    
+        <div class="row">
+            <div class="col-md-offset-0 col-md-3">
+       
+    
+            </div>
+            <div class="col-md-offset-1 col-md-6">
+                     <div>
+
+                    <p id="contactPara"> </p>
+                </div>
+                <h2 class="h6feedback">Edit Patient Info</h2>
+                 <div   class ="pre-scrollable" style="max-height:76vh">
+                <div class='containerDecoration'>
+                    
+<form role="form" (ngSubmit)="update()" novalidate>
+        <div class="form-group">
+                <label>Patient Id:</label>
+                <input class="form-control"  type="text" [(ngModel)]="article.patientId"
+                       name="patientId" value= {{article.patientId}} >
+            </div>
+            <div class="form-group">
+                    <label>First Name:</label>
+                    <input class="form-control"  type="text" [(ngModel)]="article.firstName"
+                           name="firstName" value= {{article.firstName}} >
+                </div>
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input class="form-control" type="text" [(ngModel)]="article.lastName"
+                           name="lastName" value= {{article.lastName}} >
+                </div>
+    <div class="form-group">
+        <label for="pulseRate">Pulse Rate</label>
+        <div>
+            <input class="form-control" type="text" required [(ngModel)]="article.pulseRate"
+                   name="pulseRate" value= {{article.pulseRate}}  >
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="bloodPressure">Blood Pressure</label>
+        <div>
+            <input  class="form-control" type="text" [(ngModel)]="article.bloodPressure" 
+            name="bloodPressure" value= {{article.bloodPressure}} >
+                
+        </div>
+    </div>
+    <div class="form-group"> 
+            <label for="weight">Weight</label>
+            <div>
+                <input class="form-control" type="text" required [(ngModel)]="article.weight"
+                       name="weight" value= {{article.weight}} >
+            </div>
+        </div>
+       
+        <div class="form-group">
+                <label for="temperature">Temperature</label>
+                <div>
+                    <input class="form-control" type="text" required [(ngModel)]="article.temperature"
+                           name="temperature" value= {{article.temperature}} >
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="respiratoryRate">Respiratory Rate</label>
+            <div>
+                <input class="form-control" type="text" required [(ngModel)]="article.respiratoryRate"
+                       name="respiratoryRate" value= {{article.respiratoryRate}} >
+            </div>
+        </div> 
+        <div>
+            <label>Clinical History:</label>
+                   <select [(ngModel)]="article.clinicalHistory"  name="clinicalHistory" class="form-control" value= {{article.clinicalHistory}}>
+                    <option  value="Current">Current</option>  
+                    <option value="Previous" >Previous</option>     
+                </select>
+        </div>
+
+    <div class="form-group">
+        <input class="btn btn-primary"  type="submit" value="Update">
+        <input class="btn btn-primary"  type="submit" value="Add">
+    </div>
+    <strong>{{errorMessage | json }}</strong>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,109 @@
+﻿<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand">Patient Information System</a>
+              <ul class="nav navbar-nav">
+                    <li ><a [routerLink]="['/']"><i class="fa fa-sign-home"></i>Home</a></li>                       
+                 <li > <a *ngIf="user" href="/api/auth/signout"><i class="fa fa-sign-out"></i>Signout</a> </li>
+              </ul>
+              <ul class="nav navbar-nav ml-auto" *ngIf="user">
+                    
+                            <li>
+                              <a class="nav-link">(Login: {{user.fullName}})</a>
+                            </li>
+                         
+                               <li>
+                                <a class="nav-link">(Role: {{user.role}})</a>
+                              
+                            </li>
+                         
+                  </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <p id="contactPara" style="padding-top: 70px;"> </p>
+<div class="container" >
+        
+        
+        
+<div class="row">
+    <div class="col-md-offset-0 col-md-0">
+                           
+        
+    </div>
+        
+    <div class="col-md-offset-0 col-md-12">
+            <h2> PAITENT INFORMATION</h2>     
+                        
+        <div class='containerDecoration'>
+  
+                     
+            <div   class ="pre-scrollable" style="max-height:76vh">
+
+
+                    <button class="btn btn-primary"  [routerLink]="['/articles','Current','viewByCourse']">Current</button>
+                    <button class="btn btn-primary" [routerLink]="['/articles','Previous','viewByCourse']">Previous</button>
+                <table align="center" class="table table-bordered table-striped table-hover">
+               
+
+                   
+                   <thead>
+                            <tr align="center">
+                                    <td><div> <label>Patient Id</label></div></td>
+                                    <td><div> <label>First Name</label></div></td>
+                                    <td><div> <label>Last Name</label></div></td>
+                                    <td><div> <label>Pulse Rate</label></div></td>
+                                    <td><div><label>Blood Pressure</label></div></td>
+                                    <td><div><label>Weight</label></div></td>
+                                    <td><div><label>Temperature</label></div></td>
+                                    <td><div><label>Respiratory Rate</label></div></td>
+                                    <td><div><label>Clinical History</label></div></td>
+                                    <td><div><label>User Name</label></div></td>
+                                    <td><div><label>Edit/Delete</label></div></td>
+                                    
+                                    
+
+                                </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let article of articles" align="center">
+                                    <td>{{article.patientId}}</td>
+                                    <td>{{article.firstName}}</td>
+                                    <td>{{article.lastName}}</td>
+                                    <td>{{article.pulseRate}}</td>
+                                    <td>{{article.bloodPressure}}</td>
+                                    <td>{{article.weight}}</td>
+                                    <td>{{article.temperature}}</td>
+                                    <td>{{article.respiratoryRate}}</td>
+                                    <td>{{article.clinicalHistory}}</td>
+                                    <td><a [routerLink]="['/articles',article.creator.idSeleted,'viewByStudent']">{{article.creator.fullName}}</a></td>
+                                    <td><a [routerLink]="['/articles', article._id]">Edit/Delete</a></td>           
+                                                
+                                                
+                                            
+                            </tr>
+
+                    </tbody>
+ 
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+       
+
+
+
+<div *ngIf="articles && articles.length === 0">
+    No articles yet, why don't you <a [routerLink]="['/articles/
+create']">create one</a>?
+</div>

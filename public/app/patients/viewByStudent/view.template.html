@@ -1,0 +1,110 @@
+﻿<!--<img src="assets/logo.png">
+
+<section *ngIf="article && article.creator">
+    <h1>{{article.title}}</h1>
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/articles', article._id, 'edit']">edit</a>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Posted on {{article.created}} by {{
+article.creator.
+fullName
+            }}
+        </em>
+    </small>
+    <p>{{article.content}}</p>
+</section>-->
+
+<div  style="padding-top:100px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <a class="navbar-brand">Patient Information System</a>
+                      <ul class="nav navbar-nav">
+                            <li ><a [routerLink]="['/']"><i class="fa fa-sign-home"></i>Home</a></li>                      
+                         <li > <a *ngIf="user" href="/api/auth/signout"><i class="fa fa-sign-out"></i>Signout</a> </li>
+                      </ul>
+                      <ul class="nav navbar-nav ml-auto"  *ngIf="user">
+                            <li>
+                                    <a class="nav-link">(Login: {{user.fullName}})</a>
+                                  </li>
+                               
+                                     <li>
+                                      <a class="nav-link">(Role: {{user.role}})</a>
+                                    
+                                  </li>
+                          </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+<!--<section *ngIf="article && article.creator">-->
+        <div class="row">
+                <div class="col-md-offset-0 col-md-0">
+                           
+        
+                    </div>
+                        
+                    <div class="col-md-offset-0 col-md-12">
+                        <h2> LIST BY STUDENT</h2>     
+                                    
+                    <div class='containerDecoration'>
+              
+                                 
+                        <div   class ="pre-scrollable" style="max-height:76vh">
+            
+            
+        <table align="center" class="table table-bordered table-striped table-hover">
+               
+
+                   
+                   <thead>
+                            <tr align="center">
+                                    <td><div> <label>Patient Id</label></div></td>
+                                    <td><div> <label>First Name</label></div></td>
+                                    <td><div> <label>Last Name</label></div></td>                
+                                    <td><div> <label>Pulse Rate</label></div></td>
+                                    <td><div><label>Blood Pressure</label></div></td>
+                                    <td><div><label>Weight</label></div></td>
+                                    <td><div><label>Temperature</label></div></td>
+                                    <td><div><label>Respiratory Rate</label></div></td>
+                                    <td><div><label>Clinical History</label></div></td>
+                                    <td><div><label>User Name</label></div></td>
+
+                                    
+
+                                </tr>
+                    </thead>
+                    <tbody>
+
+                            <tr *ngFor="let patient of patients" align="center">
+                                    <td>{{patient.patientId}}</td>
+                                    <td>{{patient.firstName}}</td>
+                                    <td>{{patient.lastName}}</td>
+                                    <td>{{patient.pulseRate}}</td>
+                                    <td>{{patient.bloodPressure}}</td>
+                                    <td>{{patient.weight}}</td>
+                                        <td>{{patient.temperature}}</td>
+                                            <td>{{patient.respiratoryRate}}</td>
+                                                <td>{{patient.clinicalHistory}}</td>
+                                                <td>{{patient.creator.fullName}}</td>
+                                             
+                                                
+                            </tr>
+
+                    </tbody>
+    
+                    
+ 
+ 
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+       <!-- </section>-->

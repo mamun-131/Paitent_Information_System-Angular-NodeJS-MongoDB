@@ -1,0 +1,83 @@
+﻿<!--<img src="assets/logo.png">
+
+<section *ngIf="article && article.creator">
+    <h1>{{article.title}}</h1>
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/articles', article._id, 'edit']">edit</a>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Posted on {{article.created}} by {{
+article.creator.
+fullName
+            }}
+        </em>
+    </small>
+    <p>{{article.content}}</p>
+</section>-->
+
+<div  style="padding-top:100px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <a class="navbar-brand">Patient Information System</a>
+                      <ul class="nav navbar-nav">
+                            <li ><a [routerLink]="['/']"><i class="fa fa-sign-home"></i>Home</a></li>                     
+                            <li > <a *ngIf="user" href="/api/auth/signout"><i class="fa fa-sign-out"></i>Signout</a> </li>
+                      </ul>
+                      <ul class="nav navbar-nav ml-auto"  *ngIf="user">
+                            <li class="nav-item">
+                              <a class="nav-link"><i class="fa fa-sign-fun"></i>Login: {{user.fullName}}</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link">Role: {{user.role}}</a>
+                                  
+                                </li>
+                          </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+
+        <div class="row">
+                <h2 style="padding-left: 120px"> PATIENT MOTIVATIONAL VIDEO</h2>   
+                <div class="col-md-1">
+                    </div>
+               
+                        
+                    <div class="col-md-5">
+                           
+                            
+                    <div class='containerDecoration'>
+              
+                                 
+                        <div   class ="pre-scrollable" style="max-height:76vh">
+        
+                           
+                            <div><iframe width="560" height="315" src=" https://www.youtube.com/embed/z1Prw0KOM2Q" target="_parent" frameborder="0" allowfullscreen></iframe></div>
+                           
+                            
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+            <div class='containerDecoration'>
+              
+                                 
+                    <div   class ="pre-scrollable" style="max-height:76vh">
+    
+                       
+                       
+                        <div><iframe width="560" height="315" src=" https://www.youtube.com/embed/bC0hlK7WGcM" target="_parent" frameborder="0" allowfullscreen></iframe></div>
+                        
+        </div>
+    </div>            
+        
+        </div>
+</div>
+  
+</div>
